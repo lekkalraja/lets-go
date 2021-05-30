@@ -48,6 +48,23 @@
     * `range elements` : Take this slice of 'elements' and loop over it
     * `:=` : Every time define new index&element variables with new set of values and throw away past variable values.
 
+#### SubSets of Slice
+* Slices are `zero-indexed`
+* Syntax to extract subset from slice
+  * `slice[startIndex:endIndex]`
+    * `startIndex` : Inclusive, if we don't specify it will subset elements from index 0
+    * `endIndex`: Exclusive, if we don't specify it will subset elements till the last index
+
+    ```go
+        cardValues := []string{"Ace", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"}
+	    index2Value := cardValues[2] // 2
+
+        first5Elements := cardValues[0:5] // [Ace 1 2 3 4]
+        first5Elements2 := cardValues[:5] // [Ace 1 2 3 4]
+        after5thElement := cardValues[5:len(cardValues)] // [5 6 7 8 9 10 Jack Queen King]
+        after5thElement2 := cardValues[5:] //  [5 6 7 8 9 10 Jack Queen King]
+    ```
+
 ### Questions
 1. How will you define a slice where each element in it is of type int?
    *   `[]int{}`
