@@ -128,3 +128,25 @@
         }
     ```
     * Ans) Yes, but it is breaking convention, Go avoids any mention of `this` or `self`. While the code is technically valid and will compile, we don't ever reference a receiver value as `this` or `self`.
+
+5. What will the following program log out?
+
+    ```go
+        package main
+
+        import "fmt"
+
+        func main() {
+        c := color("Red")
+
+        fmt.Println(c.describe("is an awesome color"))
+        }
+
+        type color string
+
+        func (c color) describe(description string) (string) {
+        return string(c) + " " + description
+        }
+    ```
+    * Ans) `Red is an awesome color`
+    * Note : `describe` is a function with a receiver of type `color` that requires an argument of type `string`, then returns a value of type `string`

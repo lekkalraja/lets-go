@@ -77,3 +77,33 @@
 
     ```
     * `Yes`, Files in the same package can freely call functions defined in other files.
+
+6. In the following code snippet, what will the value and type of 'title' and 'pages' be?
+
+    ```go
+        func getBookInfo() (string, int) {
+            return "War and Peace", 1000
+        }
+
+        title, pages := getBookInfo()
+    ```
+    * Ans) Title will be a string with value `War and Peace`. Pages will be an int with value `1000`
+
+7. What will the following program log out?
+
+    ```go
+        package main
+
+        import "fmt"
+
+        func main() {
+            color1, color2, color3 := colors()
+
+            fmt.Println(color1, color2, color3)
+        }
+
+        func colors() (string, string, string) {
+            return "red", "yellow", "blue"
+        }
+    ```
+    * Ans) `red yello blue`,
