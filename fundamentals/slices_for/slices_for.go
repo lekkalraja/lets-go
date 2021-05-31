@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 
@@ -28,4 +31,13 @@ func main() {
 	after5thElement := cardValues[5:len(cardValues)]
 	after5thElement2 := cardValues[5:]
 	fmt.Println(index2Value, first5Elements, first5Elements2, after5thElement, after5thElement2)
+
+	// Byte Slice
+	greet := "Hi, There"
+	fmt.Println([]byte(greet)) // [72 105 44 32 84 104 101 114 101] -> Representation ofDecimal Format
+
+	greets := []string{"Hi", "There"}
+	//fmt.Println(([]byte)(greets)) // cannot convert []string to []byte
+	greeting := strings.Join(greets, ",")
+	fmt.Println([]byte(greeting)) // [72 105 44 84 104 101 114 101]
 }
