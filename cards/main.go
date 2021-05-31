@@ -2,10 +2,11 @@ package main
 
 import "fmt"
 
+var fileName string = "my_deck.txt"
+
 func main() {
 	cards := newDeck()
-	hand, remainingCards := deal(cards, 11)
-	hand.print()
-	fmt.Println("======================================")
-	remainingCards.print()
+	cards.saveToFile(fileName)
+	deck, _ := readFromFile(fileName)
+	fmt.Println(deck)
 }
